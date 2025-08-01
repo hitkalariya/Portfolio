@@ -2571,3 +2571,604 @@ p {
 	background-color: var(--primary);
 	color: var(--white);
 }
+
+/*=============================
+	Portfolio Pagination Styles
+===============================*/
+
+/* Pagination Container */
+.pagination-container {
+  margin-top: 3rem;
+}
+
+/* Custom Pagination Styles */
+.pagination-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-custom .page-item {
+  margin: 0;
+}
+
+/* Pagination Button Styles */
+.pagination-custom .page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pagination-custom .page-link:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(71, 112, 255, 0.3);
+}
+
+/* Pagination Number Buttons */
+.pagination-custom .pagination-number {
+  min-width: 40px;
+  width: 40px;
+  padding: 0.5rem;
+}
+
+.pagination-custom .pagination-number.active {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(71, 112, 255, 0.3);
+}
+
+/* Pagination Navigation Buttons */
+.pagination-custom .pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+}
+
+.pagination-custom .pagination-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.pagination-custom .pagination-btn:hover svg {
+  transform: translateX(-2px);
+}
+
+.pagination-custom .pagination-btn:last-child:hover svg {
+  transform: translateX(2px);
+}
+
+/* Disabled State */
+.pagination-custom .page-link:disabled,
+.pagination-custom .page-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-custom .page-link:disabled:hover,
+.pagination-custom .page-link.disabled:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--border);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Page Info Text */
+.pagination-container .text-muted {
+  color: var(--paragraph) !important;
+  font-size: 14px;
+}
+
+/* Portfolio Page Transitions */
+.portfolio-page {
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-page.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.portfolio-page.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark Theme Support */
+.dark-theme .pagination-custom .page-link {
+  background: var(--dark-theme-black);
+  color: var(--dark-theme-white);
+  border-color: #2a2d3a;
+}
+
+.dark-theme .pagination-custom .page-link:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.dark-theme .pagination-custom .pagination-number.active {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.dark-theme .pagination-custom .page-link:disabled,
+.dark-theme .pagination-custom .page-link.disabled {
+  background: var(--dark-theme-black);
+  color: var(--dark-theme-light-white);
+  border-color: #2a2d3a;
+}
+
+.dark-theme .pagination-custom .page-link:disabled:hover,
+.dark-theme .pagination-custom .page-link.disabled:hover {
+  background: var(--dark-theme-black);
+  color: var(--dark-theme-light-white);
+  border-color: #2a2d3a;
+}
+
+.dark-theme .pagination-container .text-muted {
+  color: var(--dark-theme-light-white) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pagination-custom {
+    gap: 0.25rem;
+  }
+  
+  .pagination-custom .page-link {
+    min-width: 35px;
+    height: 35px;
+    padding: 0.25rem 0.5rem;
+    font-size: 13px;
+  }
+  
+  .pagination-custom .pagination-btn {
+    min-width: 80px;
+    padding: 0.25rem 0.75rem;
+    font-size: 13px;
+  }
+  
+  .pagination-custom .pagination-btn span {
+    display: none;
+  }
+  
+  .pagination-custom .pagination-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-custom {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pagination-custom .page-link {
+    min-width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .pagination-custom .pagination-btn {
+    min-width: 70px;
+    font-size: 12px;
+  }
+}
+
+/*=============================
+	About Page Styles
+===============================*/
+
+/* Section Titles */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Personal Information Section */
+.personal-info-section .info-item {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(71, 112, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
+.personal-info-section .info-item strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Education Section */
+.education-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.education-header h4 {
+  color: var(--black);
+  font-weight: 600;
+  margin: 0;
+}
+
+.education-year {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.education-institution {
+  margin-bottom: 1rem;
+}
+
+.education-institution strong {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.education-details p {
+  margin-bottom: 0.5rem;
+  color: var(--paragraph);
+}
+
+/* Skills Section */
+.skills-section h5 {
+  color: var(--black);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  padding: 0.5rem 0;
+  color: var(--paragraph);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Experience Summary */
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.experience-list li {
+  padding: 0.5rem 0;
+  color: var(--paragraph);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.experience-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Achievements Section */
+.achievement-item {
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(71, 112, 255, 0.15);
+  border-color: var(--primary);
+}
+
+.achievement-item h5 {
+  color: var(--black);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.achievement-item p {
+  color: var(--paragraph);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.achievement-item small {
+  color: var(--light-black);
+  font-size: 0.8rem;
+}
+
+/* Social Links Section */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--black);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.social-link.linkedin:hover {
+  background: #0077b5;
+  color: var(--white);
+  border-color: #0077b5;
+}
+
+.social-link.github:hover {
+  background: #333;
+  color: var(--white);
+  border-color: #333;
+}
+
+.social-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color: var(--white);
+  border-color: #dc2743;
+}
+
+.social-link.email:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.social-link i {
+  font-size: 1.1rem;
+}
+
+/* Dark Theme Support */
+.dark-theme .section-title {
+  color: var(--dark-theme-white);
+}
+
+.dark-theme .personal-info-section .info-item {
+  background: rgba(71, 112, 255, 0.1);
+  border-left-color: var(--primary);
+}
+
+.dark-theme .education-item {
+  background: var(--dark-theme-black);
+  border-color: #2a2d3a;
+}
+
+.dark-theme .education-header h4 {
+  color: var(--dark-theme-white);
+}
+
+.dark-theme .education-details p {
+  color: var(--dark-theme-light-white);
+}
+
+.dark-theme .skills-section h5 {
+  color: var(--dark-theme-white);
+}
+
+.dark-theme .skills-list li {
+  color: var(--dark-theme-light-white);
+}
+
+.dark-theme .experience-list li {
+  color: var(--dark-theme-light-white);
+}
+
+.dark-theme .achievement-item {
+  background: var(--dark-theme-black);
+  border-color: #2a2d3a;
+}
+
+.dark-theme .achievement-item h5 {
+  color: var(--dark-theme-white);
+}
+
+.dark-theme .achievement-item p {
+  color: var(--dark-theme-light-white);
+}
+
+.dark-theme .social-link {
+  background: var(--dark-theme-black);
+  border-color: #2a2d3a;
+  color: var(--dark-theme-white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .social-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .personal-info-section .info-item {
+    padding: 0.5rem;
+  }
+  
+  .education-item {
+    padding: 1rem;
+  }
+  
+  .achievement-item {
+    padding: 1rem;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/*=============================
+	About Intro Section Styles
+===============================*/
+
+.about-intro-section {
+  background: rgba(71, 112, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary);
+}
+
+.about-intro-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--paragraph);
+}
+
+.about-intro-text p {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.about-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-intro-text strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Dark theme support for about intro section */
+.dark-theme .about-intro-section {
+  background: rgba(71, 112, 255, 0.1);
+  border-left-color: var(--primary);
+}
+
+.dark-theme .about-intro-text {
+  color: var(--dark-theme-light-white);
+}
+
+.dark-theme .about-intro-text strong {
+  color: var(--dark-theme-white);
+}
+
+/* Responsive adjustments for about intro section */
+@media (max-width: 768px) {
+  .about-intro-section {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-intro-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-intro-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
