@@ -1,6 +1,99 @@
 (function ($) {
 	"use strict";
 
+	// Preloader
+	$(window).on('load', function() {
+		$('#preloader').fadeOut(500);
+	});
+
+	// Back to top button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 300) {
+			$('#back-to-top').addClass('show');
+		} else {
+			$('#back-to-top').removeClass('show');
+		}
+	});
+
+	$('#back-to-top').click(function() {
+		$('html, body').animate({scrollTop: 0}, 800);
+		return false;
+	});
+
+	// Skill bar animation
+	function animateSkillBars() {
+		$('.skill-progress').each(function() {
+			const percentage = $(this).data('percentage');
+			$(this).css('width', percentage + '%');
+		});
+	}
+
+	// Intersection Observer for animations
+	const observerOptions = {
+		threshold: 0.1,
+		rootMargin: '0px 0px -50px 0px'
+	};
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+				
+				// Animate skill bars when skills section is visible
+				if (entry.target.classList.contains('expertise-card')) {
+					setTimeout(animateSkillBars, 500);
+				}
+			}
+		});
+	}, observerOptions);
+
+	// Observe elements for animation
+	$(document).ready(function() {
+		$('.card, .project-card').addClass('fade-in');
+		$('.fade-in').each(function() {
+			observer.observe(this);
+		});
+	});
+
+	// Counter animation for achievement stats
+	function animateCounters() {
+		$('.stat-item h4').each(function() {
+			const $this = $(this);
+			const countTo = $this.text().replace(/[^0-9]/g, '');
+			const suffix = $this.text().replace(/[0-9]/g, '');
+			
+			$({ countNum: 0 }).animate({
+				countNum: countTo
+			}, {
+				duration: 2000,
+				easing: 'swing',
+				step: function() {
+					$this.text(Math.floor(this.countNum) + suffix);
+				},
+				complete: function() {
+					$this.text(countTo + suffix);
+				}
+			});
+		});
+	}
+
+	// Trigger counter animation when stats section is visible
+	const statsObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				animateCounters();
+				statsObserver.unobserve(entry.target);
+			}
+		});
+	});
+
+	$(document).ready(function() {
+		const statsElement = document.querySelector('.achievement-stats');
+		if (statsElement) {
+			statsObserver.observe(statsElement);
+		}
+	});
+
 	// Theme color control js
 	$(document).ready(function () {
 		const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -15,6 +108,27 @@
 			localStorage.setItem('darkMode', isDark);
 		});
 	});
+
+	// Smooth scrolling for anchor links
+	$('a[href^="#"]').on('click', function(e) {
+		e.preventDefault();
+		const target = $(this.getAttribute('href'));
+		if (target.length) {
+			$('html, body').animate({
+				scrollTop: target.offset().top - 100
+			}, 800);
+		}
+	});
+
+	// Enhanced hover effects for project cards
+	$('.project-item, .service-item').hover(
+		function() {
+			$(this).addClass('hover-effect');
+		},
+		function() {
+			$(this).removeClass('hover-effect');
+		}
+	);
 
 	// Mobile menu control js
 	$(".mobile-menu-control-bar").on("click", function () {
@@ -226,6 +340,16 @@
 			originalGoToPage(pageNumber);
 			scrollToTop();
 		};
+	});
+
+	// Add loading state to buttons
+	$('.btn-call, .btn-hire-me').on('click', function() {
+		const $btn = $(this);
+		const originalText = $btn.text();
+		$btn.text('Loading...').prop('disabled', true);
+		setTimeout(() => {
+			$btn.text(originalText).prop('disabled', false);
+		}, 2000);
 	});
 
 })(jQuery);
