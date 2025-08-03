@@ -28,6 +28,47 @@
 		});
 	}
 
+	// Skills scrollable container functionality
+	function initializeSkillsScroll() {
+		const skillsContainer = $('.skills-scrollable-container');
+		const scrollIndicator = $('.scroll-indicator');
+		
+		if (skillsContainer.length) {
+			// Hide scroll indicator if content doesn't overflow
+			function checkScrollVisibility() {
+				const container = skillsContainer[0];
+				if (container.scrollHeight <= container.clientHeight) {
+					scrollIndicator.hide();
+				} else {
+					scrollIndicator.show();
+				}
+			}
+			
+			// Check on load and resize
+			checkScrollVisibility();
+			$(window).on('resize', checkScrollVisibility);
+			
+			// Smooth scroll to bottom when clicking scroll indicator
+			scrollIndicator.on('click', function() {
+				skillsContainer.animate({
+					scrollTop: skillsContainer[0].scrollHeight
+				}, 800);
+			});
+			
+			// Hide scroll indicator when scrolled to bottom
+			skillsContainer.on('scroll', function() {
+				const container = this;
+				const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 10;
+				
+				if (isAtBottom) {
+					scrollIndicator.fadeOut(300);
+				} else {
+					scrollIndicator.fadeIn(300);
+				}
+			});
+		}
+	}
+
 	// Intersection Observer for animations
 	const observerOptions = {
 		threshold: 0.1,
@@ -53,6 +94,9 @@
 		$('.fade-in').each(function() {
 			observer.observe(this);
 		});
+		
+		// Initialize skills scroll functionality
+		initializeSkillsScroll();
 	});
 
 	// Counter animation for achievement stats
@@ -98,6 +142,9 @@
 	$(document).ready(function () {
 		const isDarkMode = localStorage.getItem('darkMode') === 'true';
 		$('body').toggleClass('dark-theme', isDarkMode);
+		
+		// Initialize skills scroll functionality
+		initializeSkillsScroll();
 
 		$('#page-content').fadeIn(0);
 

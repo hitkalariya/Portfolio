@@ -483,8 +483,8 @@
                       <h3 class="card-title">Technical Skills & Expertise
                       </h3>
                       
-                      <!-- Skills Categories -->
-                      <div class="skills-categories mt-24">
+                      <!-- Skills Categories with Scrollable Container -->
+                      <div class="skills-categories mt-24 skills-scrollable-container">
                         <!-- Programming Languages -->
                         <div class="skill-category">
                           <h5 class="category-title">Programming Languages</h5>
@@ -509,6 +509,26 @@
                                 <div class="skill-progress" data-percentage="85"></div>
                               </div>
                             </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/python.svg" alt="JavaScript" class="skill-icon">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">80%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="80"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/python.svg" alt="SQL" class="skill-icon">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percentage">90%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="90"></div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         
@@ -530,6 +550,36 @@
                               <div class="skill-info">
                                 <img src="assets/img/svg/opencv.svg" alt="OpenCV" class="skill-icon">
                                 <span class="skill-name">OpenCV</span>
+                                <span class="skill-percentage">88%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="88"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/numpy.svg" alt="TensorFlow" class="skill-icon">
+                                <span class="skill-name">TensorFlow</span>
+                                <span class="skill-percentage">85%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="85"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/numpy.svg" alt="PyTorch" class="skill-icon">
+                                <span class="skill-name">PyTorch</span>
+                                <span class="skill-percentage">82%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="82"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/numpy.svg" alt="Scikit-learn" class="skill-icon">
+                                <span class="skill-name">Scikit-learn</span>
                                 <span class="skill-percentage">88%</span>
                               </div>
                               <div class="skill-bar">
@@ -563,8 +613,72 @@
                                 <div class="skill-progress" data-percentage="75"></div>
                               </div>
                             </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/azure.svg" alt="AWS" class="skill-icon">
+                                <span class="skill-name">AWS</span>
+                                <span class="skill-percentage">70%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="70"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/docker.svg" alt="Kubernetes" class="skill-icon">
+                                <span class="skill-name">Kubernetes</span>
+                                <span class="skill-percentage">65%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="65"></div>
+                              </div>
+                            </div>
                           </div>
                         </div>
+                        
+                        <!-- Additional Skills -->
+                        <div class="skill-category">
+                          <h5 class="category-title">Tools & Technologies</h5>
+                          <div class="skills-list">
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/numpy.svg" alt="Git" class="skill-icon">
+                                <span class="skill-name">Git/GitHub</span>
+                                <span class="skill-percentage">90%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="90"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/opencv.svg" alt="Jupyter" class="skill-icon">
+                                <span class="skill-name">Jupyter Notebooks</span>
+                                <span class="skill-percentage">95%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="95"></div>
+                              </div>
+                            </div>
+                            <div class="skill-item">
+                              <div class="skill-info">
+                                <img src="assets/img/svg/numpy.svg" alt="Tableau" class="skill-icon">
+                                <span class="skill-name">Tableau</span>
+                                <span class="skill-percentage">85%</span>
+                              </div>
+                              <div class="skill-bar">
+                                <div class="skill-progress" data-percentage="85"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Scroll indicator -->
+                      <div class="scroll-indicator">
+                        <div class="scroll-arrow">↓</div>
+                        <div class="scroll-text">Scroll to see more skills</div>
+                        <div class="scroll-arrow">↓</div>
                       </div>
                     </div>
                   </div>
@@ -888,8 +1002,9 @@
     justify-content: space-between;
     margin: 20px 0;
     padding: 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: var(--gradient-secondary);
     border-radius: 15px;
+    border: 1px solid var(--border-light);
   }
   
   .stat-item {
@@ -905,7 +1020,7 @@
   
   .stat-item p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-secondary);
     margin: 0;
   }
   
@@ -957,14 +1072,14 @@
   
   .skill-bar {
     height: 8px;
-    background: #e9ecef;
+    background: var(--border-light);
     border-radius: 4px;
     overflow: hidden;
   }
   
   .skill-progress {
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-primary);
     border-radius: 4px;
     width: 0%;
     transition: width 2s ease-in-out;
@@ -973,7 +1088,7 @@
   /* Work Experience Enhancements */
   .achievement {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-secondary);
     margin: 2px 0;
     line-height: 1.4;
   }
@@ -1002,13 +1117,13 @@
   }
   
   .timeline-content h6 {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 8px;
   }
   
   .timeline-content p {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-muted);
     margin-bottom: 8px;
   }
   
@@ -1026,10 +1141,11 @@
     align-items: center;
     gap: 15px;
     padding: 15px;
-    background: #f8f9fa;
+    background: var(--gradient-secondary);
     border-radius: 10px;
     margin-bottom: 15px;
     transition: transform 0.3s ease;
+    border: 1px solid var(--border-light);
   }
   
   .cert-item:hover {
@@ -1051,11 +1167,12 @@
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 3px;
+    color: var(--text-primary);
   }
   
   .cert-info p {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-secondary);
     margin: 0;
   }
   
@@ -1063,16 +1180,17 @@
   .service-item {
     text-align: center;
     padding: 30px 20px;
-    background: white;
+    background: var(--card-bg);
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px var(--shadow-light);
     transition: all 0.3s ease;
     height: 100%;
+    border: 1px solid var(--card-border);
   }
   
   .service-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px var(--shadow-medium);
   }
   
   .service-icon {
@@ -1092,12 +1210,12 @@
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 15px;
-    color: var(--dark);
+    color: var(--text-primary);
   }
   
   .service-item p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.5;
   }
   
@@ -1108,7 +1226,7 @@
   
   .cta-description {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 30px;
   }
   
@@ -1120,7 +1238,7 @@
   }
   
   .btn-primary-cta {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-primary);
     color: white;
     padding: 15px 30px;
     border-radius: 30px;
