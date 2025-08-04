@@ -1,0 +1,739 @@
+/* Dark Mode CSS - Comprehensive styling for all pages */
+
+/* Root variables for consistent theming */
+:root {
+  --primary: #667eea;
+  --primary-dark: #5a67d8;
+  --secondary: #764ba2;
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #1a1f2c;
+  --light-gray: #f8f9fa;
+  --medium-gray: #6c757d;
+  --border-color: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark theme variables */
+body.dark-theme {
+  --white: #1e2532;
+  --dark: #ffffff;
+  --light-gray: #2a3441;
+  --medium-gray: #8892b0;
+  --border-color: #3a4553;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --bg-primary: #1e2532;
+  --bg-secondary: #2a3441;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+}
+
+/* Base body styling */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Card styling */
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px var(--shadow-hover);
+}
+
+/* Profile card specific styling */
+.profile-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.profile-card .card-title {
+  color: var(--text-primary);
+}
+
+.profile-card p {
+  color: var(--text-secondary);
+}
+
+/* Content box card styling */
+.content-box-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.content-box-card .main-title {
+  color: var(--text-primary);
+}
+
+.content-box-card p {
+  color: var(--text-secondary);
+}
+
+/* Navigation styling */
+.navbar {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-main {
+  background-color: var(--white);
+}
+
+.nav-link {
+  color: var(--text-secondary) !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary) !important;
+}
+
+.nav-link svg {
+  stroke: var(--text-secondary);
+  transition: stroke 0.3s ease;
+}
+
+.nav-link:hover svg,
+.nav-link.active svg {
+  stroke: var(--primary);
+}
+
+/* Logo styling */
+.logo svg path {
+  fill: var(--text-primary);
+}
+
+.logo span {
+  color: var(--text-primary);
+}
+
+.logo .primary {
+  color: var(--primary);
+}
+
+/* Button styling */
+.btn-call,
+.btn-copy {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn-call:hover,
+.btn-copy:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+}
+
+.lets-talk-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.lets-talk-btn:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* Theme control button */
+.theme-control-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.theme-control-btn:hover {
+  background-color: var(--light-gray);
+  border-color: var(--primary);
+}
+
+/* Form styling */
+.form-control,
+.form-select {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.form-label {
+  color: var(--text-primary);
+}
+
+/* Submit button */
+.submit-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border: none;
+  color: white;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Social media icons */
+.social-media-icon a {
+  background-color: var(--light-gray);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.social-media-icon a:hover {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Footer styling */
+.footer-area {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.footer-area a {
+  color: var(--primary);
+}
+
+/* Project card styling */
+.project-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 40px var(--shadow-hover);
+}
+
+.project-title a {
+  color: var(--text-primary);
+}
+
+.project-title a:hover {
+  color: var(--primary);
+}
+
+.project-description {
+  color: var(--text-secondary);
+}
+
+.tech-tag {
+  background-color: var(--light-gray);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.tech-tag:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.project-category {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+body.dark-theme .project-category {
+  background-color: rgba(30, 37, 50, 0.9);
+  color: var(--text-primary);
+}
+
+.project-category.featured {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+}
+
+/* About page specific styling */
+.expertise-item {
+  background-color: var(--light-gray);
+  border: 1px solid var(--border-color);
+}
+
+.expertise-item:hover {
+  background-color: var(--white);
+  box-shadow: 0 5px 20px var(--shadow);
+}
+
+.expertise-content h4 {
+  color: var(--text-primary);
+}
+
+.expertise-content p {
+  color: var(--text-secondary);
+}
+
+.approach-item {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.approach-item h5 {
+  color: var(--text-primary);
+}
+
+.approach-item p {
+  color: var(--text-secondary);
+}
+
+.achievement-item span {
+  color: var(--text-secondary);
+}
+
+.achievement-item i {
+  color: var(--primary);
+}
+
+/* Contact page specific styling */
+.contact-method {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.method-info h5 {
+  color: var(--text-primary);
+}
+
+.method-info p {
+  color: var(--text-secondary);
+}
+
+.form-note p,
+.form-privacy p {
+  background-color: var(--light-gray);
+  border-left: 4px solid var(--primary);
+  color: var(--text-secondary);
+}
+
+/* Quick stats and contact stats */
+.quick-stats,
+.contact-stats {
+  background-color: var(--light-gray);
+  border: 1px solid var(--border-color);
+}
+
+.stat strong,
+.contact-stat i {
+  color: var(--primary);
+}
+
+/* Section titles */
+.section-title {
+  color: var(--text-primary);
+}
+
+.section-title::before {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+/* CTA sections */
+.cta-section-about,
+.portfolio-cta-section .card {
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--bg-secondary) 100%);
+  border: 1px solid var(--border-color);
+}
+
+.cta-section-about h3,
+.portfolio-cta-section h2 {
+  color: var(--text-primary);
+}
+
+.cta-section-about p,
+.portfolio-cta-section p {
+  color: var(--text-secondary);
+}
+
+/* Back to top button */
+.back-to-top-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+}
+
+/* Accordion styling */
+.accordion-item {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.accordion-button {
+  background-color: var(--white);
+  color: var(--text-primary);
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--light-gray);
+  color: var(--text-primary);
+}
+
+.accordion-body {
+  background-color: var(--white);
+  color: var(--text-secondary);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  background-color: rgba(30, 37, 50, 0.8);
+}
+
+body.dark-theme .mobile-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Pagination styling */
+.pagination button {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.pagination button:hover,
+.pagination button.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Article and blog styling */
+.article-publications-item {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.article-publications-item .title {
+  color: var(--text-primary);
+}
+
+.article-publications-item .title:hover {
+  color: var(--primary);
+}
+
+/* Portfolio details styling */
+.portfolio-details-text {
+  color: var(--text-secondary);
+}
+
+.portfolio-details-text h4 {
+  color: var(--text-primary);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ensure proper contrast for readability */
+body.dark-theme .highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* AI Assistant specific styling */
+.ai-chat-container {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+}
+
+.ai-message {
+  background-color: var(--light-gray);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.user-message {
+  background-color: var(--primary);
+  color: white;
+}
+
+.ai-input-area {
+  background-color: var(--white);
+  border-top: 1px solid var(--border-color);
+}
+
+.ai-input {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.ai-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.ai-send-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.ai-send-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.ai-settings-panel {
+  background-color: var(--light-gray);
+  border: 1px solid var(--border-color);
+}
+
+.settings-input {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.settings-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Loading states */
+.loading-dots {
+  color: var(--text-secondary);
+}
+
+.typing-indicator {
+  background-color: var(--light-gray);
+  border: 1px solid var(--border-color);
+}
+
+/* Status indicators */
+.status-online {
+  color: #28a745;
+}
+
+.status-offline {
+  color: #dc3545;
+}
+
+/* Code blocks in AI responses */
+.ai-code-block {
+  background-color: var(--light-gray);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+}
+
+/* Scrollbar styling for dark mode */
+body.dark-theme ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--medium-gray);
+  border-radius: 4px;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Ensure all text inputs work in dark mode */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+/* Placeholder text */
+::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Ensure proper visibility for all interactive elements */
+button,
+.btn {
+  transition: all 0.3s ease;
+}
+
+/* Fix any remaining contrast issues */
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.text-dark {
+  color: var(--text-primary) !important;
+}
+
+.bg-light {
+  background-color: var(--light-gray) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.border {
+  border-color: var(--border-color) !important;
+}
+
+/* Ensure dropdown menus work in dark mode */
+.dropdown-menu {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.dropdown-item {
+  color: var(--text-primary);
+}
+
+.dropdown-item:hover {
+  background-color: var(--light-gray);
+  color: var(--text-primary);
+}
+
+/* Modal styling for dark mode */
+.modal-content {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border-color);
+}
+
+.modal-title {
+  color: var(--text-primary);
+}
+
+/* Table styling for dark mode */
+.table {
+  color: var(--text-primary);
+}
+
+.table th {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.table td {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Alert styling */
+.alert {
+  border: 1px solid var(--border-color);
+}
+
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-color: #28a745;
+  color: #155724;
+}
+
+body.dark-theme .alert-success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #d4edda;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+body.dark-theme .alert-danger {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #f8d7da;
+}
+
+/* Badge styling */
+.badge {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Progress bar styling */
+.progress {
+  background-color: var(--light-gray);
+}
+
+.progress-bar {
+  background-color: var(--primary);
+}
+
+/* Tooltip styling */
+.tooltip-inner {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+body.dark-theme .tooltip-inner {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+/* Popover styling */
+.popover {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.popover-header {
+  background-color: var(--light-gray);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.popover-body {
+  color: var(--text-secondary);
+}
