@@ -44,9 +44,12 @@
 				}
 			}
 			
-			// Check on load and resize
+			// Check immediately, after a delay, on load and resize
 			checkScrollVisibility();
+			setTimeout(checkScrollVisibility, 100);
+			setTimeout(checkScrollVisibility, 500);
 			$(window).on('resize', checkScrollVisibility);
+			$(window).on('load', checkScrollVisibility);
 			
 			// Smooth scroll to bottom when clicking scroll indicator
 			scrollIndicator.on('click', function() {
@@ -66,6 +69,80 @@
 					scrollIndicator.fadeIn(300);
 				}
 			});
+		}
+	}
+
+	// Recent Projects functionality
+	function initializeRecentProjects() {
+		if (typeof getTopProjects === 'function') {
+			const topProjects = getTopProjects(3);
+			const projectsContainer = $('.projects-main .parent-container');
+			
+			if (projectsContainer.length && topProjects.length > 0) {
+				// Clear existing projects
+				projectsContainer.empty();
+				
+				// Create a better layout structure
+				const projectsHtml = `
+					<div class="col-lg-12">
+						<div class="recent-projects-grid">
+							${topProjects.map((project, index) => `
+								<div class="project-item-wrapper" data-project-id="${project.id}">
+									<div class="project-item" style="cursor: pointer;">
+										<div class="image">
+											<img src="${project.image}" alt="${project.title}" class="img-fluid w-100">
+											<div class="project-overlay">
+												<div class="project-info">
+													<h5 class="project-title">${project.title}</h5>
+													<span class="project-category">${project.category}</span>
+												</div>
+												<div class="project-action">
+													<i class="fab fa-github"></i>
+												</div>
+											</div>
+											<div class="info">
+												<span class="category">${project.category}</span>
+											</div>
+										</div>
+									</div>
+							`).join('')}
+						</div>
+						<div class="projects-description mt-3">
+							<p class="description-text">
+								Here, you'll find a showcase of my work in data science, machine learning, and artificial intelligence. 
+								Each project represents my journey of learning, problem-solving, and innovation across diverse domains 
+								such as cybersecurity, customer analytics, automotive insights, and more. Each project demonstrates 
+								measurable impact and real-world applications.
+							</p>
+						</div>
+					</div>
+				`;
+				
+				projectsContainer.html(projectsHtml);
+				
+				// Add click handlers for project navigation to GitHub
+				$('.project-item-wrapper[data-project-id]').on('click', function(e) {
+					const projectId = $(this).data('project-id');
+					const project = topProjects.find(p => p.id === projectId);
+					if (project && project.githubUrl) {
+						window.open(project.githubUrl, '_blank');
+					}
+				});
+				
+				// Add hover effects
+				$('.project-item-wrapper').hover(
+					function() {
+						$(this).find('.project-item').css('transform', 'translateY(-8px)');
+						$(this).find('.image img').css('transform', 'scale(1.1)');
+						$(this).find('.project-overlay').css('opacity', '1');
+					},
+					function() {
+						$(this).find('.project-item').css('transform', 'translateY(0)');
+						$(this).find('.image img').css('transform', 'scale(1)');
+						$(this).find('.project-overlay').css('opacity', '0');
+					}
+				);
+			}
 		}
 	}
 
@@ -145,6 +222,9 @@
 		
 		// Initialize skills scroll functionality
 		initializeSkillsScroll();
+		
+		// Initialize recent projects
+		initializeRecentProjects();
 
 		$('#page-content').fadeIn(0);
 
