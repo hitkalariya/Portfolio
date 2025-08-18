@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AI Assistant - Hit Kalariya | AI/ML Engineer</title>
+  <meta name="description" content="Intelligent AI Assistant powered by Gemini API - Chat with Hit Kalariya's AI assistant for AI/ML insights, project discussions, and technical guidance.">
+  <meta name="keywords" content="AI Assistant, Gemini API, Machine Learning Chat, AI Consultation, Hit Kalariya">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+  
+  <!-- CSS here -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fontawsome/css/all.min.css">
+  <link rel="stylesheet" href="assets/fontawsome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+
+<body>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <div id="page-content">
+    <!-- header part start -->
+    <header class="header-area">
+      <nav class="navbar">
+        <div class="container">
+          <div class="menu-container">
+            <div class="logo">
+              <a class="navbar-brand me-0" href="index.html">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0 1.5C0 1.10218 0.158035 0.720644 0.43934 0.43934C0.720644 0.158035 1.10218 0 1.5 0L9 0C9.39782 0 9.77936 0.158035 10.0607 0.43934C10.342 0.720644 10.5 1.10218 10.5 1.5V22.5C10.5 22.8978 10.342 23.2794 10.0607 23.5607C9.77936 23.842 9.39782 24 9 24H1.5C1.10218 24 0.720644 23.842 0.43934 23.5607C0.158035 23.2794 0 22.8978 0 22.5V1.5ZM13.5 1.5C13.5 1.10218 13.658 0.720644 13.9393 0.43934C14.2206 0.158035 14.6022 0 15 0L22.5 0C22.8978 0 23.2794 0.158035 23.5607 0.43934C23.842 0.720644 24 1.10218 24 1.5V9C24 9.39782 23.842 9.77936 23.5607 10.0607C23.2794 10.342 22.8978 10.5 22.5 10.5H15C14.6022 10.5 14.2206 10.342 13.9393 10.0607C13.658 9.77936 13.5 9.39782 13.5 9V1.5ZM13.5 15C13.5 14.6022 13.658 14.2206 13.9393 13.9393C14.2206 13.658 14.6022 13.5 15 13.5H22.5C22.8978 13.5 23.2794 13.658 23.5607 13.9393C23.842 14.2206 24 14.6022 24 15V22.5C24 22.8978 23.842 23.2794 23.5607 23.5607C23.2794 23.842 22.8978 24 22.5 24H15C14.6022 24 14.2206 23.842 13.9393 23.5607C13.658 23.2794 13.5 22.8978 13.5 22.5V15Z"
+                    class="logo-icon" />
+                </svg>
+                <span>Hit's<span class="primary">Folio</span></span>
+              </a>
+            </div>
+            <div class="navbar-main d-flex flex-grow-1">
+              <div class="logo inner-logo d-block d-xl-none">
+                <a class="navbar-brand me-0" href="index.html">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0 1.5C0 1.10218 0.158035 0.720644 0.43934 0.43934C0.720644 0.158035 1.10218 0 1.5 0L9 0C9.39782 0 9.77936 0.158035 10.0607 0.43934C10.342 0.720644 10.5 1.10218 10.5 1.5V22.5C10.5 22.8978 10.342 23.2794 10.0607 23.5607C9.77936 23.842 9.39782 24 9 24H1.5C1.10218 24 0.720644 23.842 0.43934 23.5607C0.158035 23.2794 0 22.8978 0 22.5V1.5ZM13.5 1.5C13.5 1.10218 13.658 0.720644 13.9393 0.43934C14.2206 0.158035 14.6022 0 15 0L22.5 0C22.8978 0 23.2794 0.158035 23.5607 0.43934C23.842 0.720644 24 1.10218 24 1.5V9C24 9.39782 23.842 9.77936 23.5607 10.0607C23.2794 10.342 22.8978 10.5 22.5 10.5H15C14.6022 10.5 14.2206 10.342 13.9393 10.0607C13.658 9.77936 13.5 9.39782 13.5 9V1.5ZM13.5 15C13.5 14.6022 13.658 14.2206 13.9393 13.9393C14.2206 13.658 14.6022 13.5 15 13.5H22.5C22.8978 13.5 23.2794 13.658 23.5607 13.9393C23.842 14.2206 24 14.6022 24 15V22.5C24 22.8978 23.842 23.2794 23.5607 23.5607C23.2794 23.842 22.8978 24 22.5 24H15C14.6022 24 14.2206 23.842 13.9393 23.5607C13.658 23.2794 13.5 22.8978 13.5 22.5V15Z"
+                      class="logo-icon" />
+                  </svg>
+                  <span>Hit's<span class="primary">Folio</span></span>
+                </a>
+              </div>
+              <ul class="navbar-info mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">
+                    <svg class="nav-icon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M13.475 4.92481L9.03083 1.46814C8.64082 1.16473 8.1608 1 7.66667 1C7.17254 1 6.69251 1.16473 6.3025 1.46814L1.8575 4.92481C1.59037 5.13254 1.37424 5.39858 1.22563 5.7026C1.07701 6.00662 0.99984 6.34058 1 6.67897V12.679C1 13.121 1.17559 13.5449 1.48816 13.8575C1.80072 14.17 2.22464 14.3456 2.66667 14.3456H12.6667C13.1087 14.3456 13.5326 14.17 13.8452 13.8575C14.1577 13.5449 14.3333 13.121 14.3333 12.679V6.67897C14.3333 5.99314 14.0167 5.34564 13.475 4.92481Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10.9753 10.1665C9.13359 11.2773 6.14859 11.2773 4.30859 10.1665" stroke-width="1.4"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Home</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">
+                    <svg class="nav-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9 9.8335C9.66304 9.8335 10.2989 9.5701 10.7678 9.10126C11.2366 8.63242 11.5 7.99654 11.5 7.3335C11.5 6.67045 11.2366 6.03457 10.7678 5.56573C10.2989 5.09689 9.66304 4.8335 9 4.8335C8.33696 4.8335 7.70107 5.09689 7.23223 5.56573C6.76339 6.03457 6.5 6.67045 6.5 7.3335C6.5 7.99654 6.76339 8.63242 7.23223 9.10126C7.70107 9.5701 8.33696 9.8335 9 9.8335Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9 1.5C15 1.5 16.5 3 16.5 9C16.5 15 15 16.5 9 16.5C3 16.5 1.5 15 1.5 9C1.5 3 3 1.5 9 1.5Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M4 15.7085V15.6668C4 14.7828 4.35119 13.9349 4.97631 13.3098C5.60143 12.6847 6.44928 12.3335 7.33333 12.3335H10.6667C11.5507 12.3335 12.3986 12.6847 13.0237 13.3098C13.6488 13.9349 14 14.7828 14 15.6668V15.7085"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html">
+                    <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M2.00326 3.99733L7.95159 1.40649C8.04974 1.36442 8.15533 1.34243 8.26212 1.34181C8.3689 1.34119 8.47473 1.36196 8.57337 1.40289C8.67201 1.44382 8.76145 1.50408 8.83642 1.58013C8.9114 1.65617 8.97039 1.74646 9.00992 1.84566L13.1133 11.764C13.1985 11.9651 13.2014 12.1917 13.1213 12.3949C13.0412 12.5982 12.8845 12.7618 12.6849 12.8507L6.73742 15.4415C6.63922 15.4837 6.53356 15.5058 6.42668 15.5065C6.3198 15.5072 6.21387 15.4864 6.11514 15.4455C6.0164 15.4046 5.92688 15.3442 5.85184 15.2681C5.7768 15.192 5.71778 15.1016 5.67826 15.0023L1.57492 5.08316C1.48963 4.88204 1.48673 4.65546 1.56684 4.45222C1.64696 4.24898 1.80367 4.08616 2.00326 3.99733Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M11.5 1.3335H12.3333C12.5543 1.3335 12.7663 1.42129 12.9226 1.57757C13.0789 1.73385 13.1667 1.94582 13.1667 2.16683V5.0835"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M15.6663 3C15.8863 3.09333 16.0997 3.18083 16.3063 3.2625C16.5098 3.34882 16.6706 3.51241 16.7534 3.71729C16.8362 3.92217 16.8343 4.15155 16.748 4.355L14.833 8.83334"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="ai-assistant.html">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 17L12 22L22 17" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 12L12 17L22 12" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    AI Assistant
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">
+                    <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.66699 5.5H12.3337" stroke-width="1.4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M5.66699 8.8335H10.667" stroke-width="1.4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M14 1.3335C14.663 1.3335 15.2989 1.59689 15.7678 2.06573C16.2366 2.53457 16.5 3.17045 16.5 3.8335V10.5002C16.5 11.1632 16.2366 11.7991 15.7678 12.2679C15.2989 12.7368 14.663 13.0002 14 13.0002H9.83333L5.66667 15.5002V13.0002H4C3.33696 13.0002 2.70107 12.7368 2.23223 12.2679C1.76339 11.7991 1.5 11.1632 1.5 10.5002V3.8335C1.5 3.17045 1.76339 2.53457 2.23223 2.06573C2.70107 1.59689 3.33696 1.3335 4 1.3335H14Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Contact
+                  </a>
+                </li>
+              </ul>
+              <div class="header-right-info d-flex align-items-center">
+                <button class="theme-control-btn">
+                  <span class="dark">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.8005 3C10.207 3.0003 8.64356 3.44286 7.27683 4.28049C5.91011 5.11811 4.79139 6.31937 4.04002 7.75612C3.28865 9.19288 2.93281 10.8112 3.01046 12.4386C3.08811 14.0659 3.59633 15.6411 4.48091 16.9963C5.3655 18.3514 6.59326 19.4356 8.03324 20.1333C9.47322 20.8309 11.0714 21.1157 12.6573 20.9574C14.2432 20.7991 15.7573 20.2036 17.0381 19.2344C18.319 18.2652 19.3185 16.9587 19.9301 15.4542C20.2302 14.7162 19.5111 13.9746 18.7875 14.2752C17.5475 14.7888 16.1706 14.8418 14.8963 14.425C13.622 14.0082 12.5308 13.1479 11.8126 11.9937C11.0943 10.8396 10.7943 9.4645 10.9648 8.10764C11.1353 6.75077 11.7655 5.49792 12.7458 4.5669L12.8136 4.4949C13.2986 3.9279 12.913 3.0072 12.1464 3.0072H11.9122L11.8524 3.0018L11.7996 3H11.8005Z"
+                        fill="#1A1F2C" />
+                    </svg>
+                  </span>
+                  <span class="light">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 19C12.2449 19 12.4813 19.09 12.6644 19.2527C12.8474 19.4155 12.9643 19.6397 12.993 19.883L13 20V21C12.9997 21.2549 12.9021 21.5 12.7272 21.6854C12.5522 21.8707 12.313 21.9822 12.0586 21.9972C11.8042 22.0121 11.5536 21.9293 11.3582 21.7657C11.1627 21.6021 11.0371 21.3701 11.007 21.117L11 21V20C11 19.7348 11.1054 19.4804 11.2929 19.2929C11.4804 19.1054 11.7348 19 12 19Z"
+                        fill="#FD7E41" />
+                      <path
+                        d="M18.3127 16.9099L18.4067 16.9929L19.1067 17.6929C19.2861 17.8729 19.3902 18.1144 19.398 18.3683C19.4057 18.6223 19.3165 18.8697 19.1485 19.0602C18.9804 19.2508 18.7462 19.3702 18.4933 19.3943C18.2403 19.4184 17.9877 19.3454 17.7867 19.1899L17.6927 19.1069L16.9927 18.4069C16.8202 18.2347 16.7165 18.0053 16.7012 17.7619C16.6859 17.5186 16.76 17.278 16.9097 17.0855C17.0593 16.893 17.2741 16.7618 17.5137 16.7166C17.7533 16.6713 18.0012 16.7152 18.2107 16.8399L18.3127 16.9099Z"
+                        fill="#FD7E41" />
+                    </svg>
+                  </span>
+                </button>
+                <a href="contact.html" class="lets-talk-btn">
+                  Let's Talk
+                  <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 11.6665V6.6665H12.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M17.5 6.6665L10 14.1665L2.5 6.6665" stroke="white" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="mobile-menu-overlay d-block d-lg-none"></div>
+            <div class="mobile-menu-control-bar d-block d-xl-none">
+              <button class="mobile-menu-control-bar">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- header part end -->
+
+    <!-- main area part start -->
+    <main>
+      <section class="content-box-area mt-4">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-xl-4">
+              <!-- profile card start here  -->
+              <div class="card profile-card">
+                <div class="card-body">
+                  <div class="image text-center img-container">
+                    <img class="img-fluid rounded" src="assets/img/images/profile.jpg" alt="Hit Kalariya Profile">
+                  </div>
+
+                  <h3 class="card-title mt-3">Hit Kalariya 👋</h3>
+                  <div class="text">
+                    <div class="text-justify">
+                      <p>A Passionate AI-ML Engineer 🤖 & Data Analyst with <span class="highlight">3+ years</span> of Expertise in Developing Intelligent Solutions for Real-World Challenges 🌍.</p>
+                    </div>
+                    
+                    <!-- AI Assistant Stats -->
+                    <div class="ai-stats">
+                      <div class="ai-stat">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Powered</span>
+                      </div>
+                      <div class="ai-stat">
+                        <i class="fas fa-brain"></i>
+                        <span>Smart Responses</span>
+                      </div>
+                      <div class="ai-stat">
+                        <i class="fas fa-lightning-bolt"></i>
+                        <span>Instant Help</span>
+                      </div>
+                    </div>
+                    
+                    <div class="common-button-groups">
+                      <a class="btn btn-call" href="https://drive.google.com/file/d/1EW3MXkjnkvXxpp095uwUwICalkA9gkO2/view?usp=drive_link">
+                        <svg class="icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 2H15L19 6V20C19 21.1 18.1 22 17 22H6C4.9 22 4 21.1 4 20V4C4 2.9 4.9 2 6 2Z" fill="#E8E8E8" stroke="#000" stroke-width="1.5" />
+                          <path d="M15 2V6H19" fill="#D3D3D3" stroke="#000" stroke-width="1.5" />
+                          <rect x="7" y="8" width="11" height="2" rx="1" fill="#000" />
+                          <rect x="7" y="12" width="9" height="1.5" rx="0.75" fill="#000" />
+                          <rect x="7" y="15" width="7" height="1.5" rx="0.75" fill="#000" />
+                        </svg>
+                        My Resume
+                      </a>
+                      <button class="btn btn-copy" data-clipboard-text="hitkalariya88@gmail.com">
+                        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 10C8 9.46957 8.21071 8.96086 8.58579 8.58579C8.96086 8.21071 9.46957 8 10 8H18C18.5304 8 19.0391 8.21071 19.4142 8.58579C19.7893 8.96086 20 9.46957 20 10V18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H10C9.46957 20 8.96086 19.7893 8.58579 19.4142C8.21071 19.0391 8 18.5304 8 18V10Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M16 8V6C16 5.46957 15.7893 4.96086 15.4142 4.58579C15.0391 4.21071 14.5304 4 14 4H6C5.46957 4 4.96086 4.21071 4.58579 4.58579C4.21071 4.96086 4 5.46957 4 6V14C4 14.5304 4.21071 15.0391 4.58579 15.4142C4.96086 15.7893 5.46957 16 6 16H8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Copy Email
+                      </button>
+                    </div>
+                    <div class="social-media-icon">
+                      <ul class="list-unstyled">
+                        <li><a href="https://www.linkedin.com/in/hitkalariya/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/hitkalariya" target="_blank"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://www.instagram.com/hitkalariya_/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- profile card end here  -->
+            </div>
+            
+            <div class="col-xl-8">
+              <div class="card content-box-card">
+                <div class="card-body">
+                  <!-- AI Assistant Header -->
+                  <div class="ai-assistant-header">
+                    <div class="ai-header-content">
+                      <h1 class="main-title">
+                        <i class="fas fa-robot ai-icon"></i>
+                        AI Assistant
+                        <span class="ai-status" id="aiStatus">
+                          <i class="fas fa-circle status-indicator"></i>
+                          <span class="status-text">Ready</span>
+                        </span>
+                      </h1>
+                      <p class="ai-description">
+                        Chat with my AI assistant powered by Google Gemini. Ask questions about AI/ML, get project insights, 
+                        or discuss technical topics. The assistant is trained to help with data science, machine learning, 
+                        and artificial intelligence queries.
+                      </p>
+                    </div>
+                    
+                    <!-- Settings Panel -->
+                    <div class="ai-settings-panel" id="settingsPanel">
+                      <div class="settings-header">
+                        <h5><i class="fas fa-cog"></i> AI Configuration</h5>
+                        <button class="btn-close-settings" id="closeSettings">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="settings-content">
+                        <div class="mb-3">
+                          <label for="apiKey" class="form-label">
+                            <i class="fas fa-key"></i> Gemini API Key
+                          </label>
+                          <input type="password" class="form-control settings-input" id="apiKey" 
+                                 placeholder="Enter your Gemini API key">
+                          <small class="form-text">Your API key is stored locally and never shared.</small>
+                        </div>
+                        <div class="mb-3">
+                          <label for="modelName" class="form-label">
+                            <i class="fas fa-brain"></i> Model Name
+                          </label>
+                          <select class="form-select settings-input" id="modelName">
+                            <option value="gemini-pro">Gemini Pro</option>
+                            <option value="gemini-pro-vision">Gemini Pro Vision</option>
+                            <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="temperature" class="form-label">
+                            <i class="fas fa-thermometer-half"></i> Temperature: <span id="tempValue">0.7</span>
+                          </label>
+                          <input type="range" class="form-range" id="temperature" min="0" max="1" step="0.1" value="0.7">
+                          <small class="form-text">Controls creativity (0 = focused, 1 = creative)</small>
+                        </div>
+                        <button class="btn btn-primary save-settings" id="saveSettings">
+                          <i class="fas fa-save"></i> Save Configuration
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Chat Container -->
+                  <div class="ai-chat-container">
+                    <div class="chat-header">
+                      <div class="chat-info">
+                        <div class="ai-avatar">
+                          <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ai-details">
+                          <h6>Hit's AI Assistant</h6>
+                          <small class="ai-model-info" id="modelInfo">Gemini Pro</small>
+                        </div>
+                      </div>
+                      <div class="chat-controls">
+                        <button class="btn btn-sm btn-outline-secondary" id="clearChat">
+                          <i class="fas fa-trash"></i> Clear
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary" id="openSettings">
+                          <i class="fas fa-cog"></i> Settings
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                      <div class="welcome-message">
+                        <div class="ai-message">
+                          <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                          </div>
+                          <div class="message-content">
+                            <p>👋 Hello! I'm Hit's AI Assistant. I'm here to help you with:</p>
+                            <ul class="ai-capabilities">
+                              <li><i class="fas fa-brain"></i> AI/ML concepts and techniques</li>
+                              <li><i class="fas fa-code"></i> Programming and development questions</li>
+                              <li><i class="fas fa-chart-line"></i> Data science and analytics</li>
+                              <li><i class="fas fa-project-diagram"></i> Project insights and recommendations</li>
+                              <li><i class="fas fa-lightbulb"></i> Technical problem-solving</li>
+                            </ul>
+                            <p>What would you like to know about AI and machine learning?</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ai-input-area">
+                      <div class="input-container">
+                        <div class="input-wrapper">
+                          <textarea class="form-control ai-input" id="userInput" 
+                                    placeholder="Ask me anything about AI, ML, data science, or my projects..." 
+                                    rows="1"></textarea>
+                          <button class="ai-send-btn" id="sendMessage" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                          </button>
+                        </div>
+                        <div class="input-footer">
+                          <small class="input-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Press Enter to send, Shift+Enter for new line
+                          </small>
+                          <div class="quick-actions">
+                            <button class="quick-action-btn" data-prompt="Tell me about your AI/ML projects">
+                              <i class="fas fa-project-diagram"></i> Projects
+                            </button>
+                            <button class="quick-action-btn" data-prompt="What are your core AI/ML skills?">
+                              <i class="fas fa-cogs"></i> Skills
+                            </button>
+                            <button class="quick-action-btn" data-prompt="How can AI help my business?">
+                              <i class="fas fa-business-time"></i> Business AI
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- background shape area start -->
+      <div class="background-shapes">
+        <div class="shape-1 common-shape">
+          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+        </div>
+        <div class="shape-2 common-shape">
+          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+        </div>
+        <div class="threed-shape-1 move-with-cursor" data-value="1">
+          <img src="assets/img/bg/object-3d-1.png" alt="object-3d-1">
+        </div>
+        <div class="threed-shape-2 move-with-cursor" data-value="1">
+          <img src="assets/img/bg/object-3d-2.png" alt="object-3d-2">
+        </div>
+      </div>
+      <!-- background shape area end -->
+    </main>
+    <!-- main area part end -->
+
+    <!-- footer part start -->
+    <footer class="footer-area">
+      <div class="container">
+        <div class="text text-center">
+          <p>@ Hit'sFolio 2024, Design By <a href="#">hitkalariya</a></p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer part end -->
+  </div>
+
+  <!-- JS here -->
+  <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/ajax-form.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/ai-assistant.js"></script>
+</body>
+
+</html>
+
+<style>
+  /* AI Assistant Specific Styles */
+  .ai-assistant-header {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .ai-header-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .ai-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    animation: pulse 2s infinite;
+  }
+  
+  .ai-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    background: var(--light-gray);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .status-indicator {
+    font-size: 0.7rem;
+    color: #28a745;
+    animation: blink 2s infinite;
+  }
+  
+  .ai-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .ai-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .ai-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  
+  .ai-stat i {
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+  
+  /* Settings Panel */
+  .ai-settings-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 350px;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    z-index: 1000;
+    display: none;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .settings-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .settings-header h5 {
+    margin: 0;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .btn-close-settings {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-close-settings:hover {
+    background: var(--light-gray);
+    color: var(--text-primary);
+  }
+  
+  .settings-content {
+    padding: 20px;
+  }
+  
+  .form-text {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+  }
+  
+  .save-settings {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .save-settings:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  }
+  
+  /* Chat Container */
+  .ai-chat-container {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--light-gray);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .chat-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .ai-avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .ai-details h6 {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  .ai-model-info {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+  }
+  
+  .chat-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: var(--bg-primary);
+  }
+  
+  .ai-message,
+  .user-message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.3s ease;
+  }
+  
+  .user-message {
+    flex-direction: row-reverse;
+  }
+  
+  .message-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .ai-message .message-avatar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+  }
+  
+  .user-message .message-avatar {
+    background: var(--medium-gray);
+    color: white;
+  }
+  
+  .message-content {
+    max-width: 70%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .ai-message .message-content {
+    background: var(--light-gray);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-bottom-left-radius: 5px;
+  }
+  
+  .user-message .message-content {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .message-content p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .message-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+  
+  .message-content li {
+    margin-bottom: 5px;
+  }
+  
+  .ai-capabilities {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .ai-capabilities li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+  }
+  
+  .ai-capabilities i {
+    color: var(--primary);
+    width: 16px;
+  }
+  
+  /* Input Area */
+  .ai-input-area {
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  
+  .ai-input {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    padding: 12px 20px;
+    resize: none;
+    max-height: 120px;
+    background: var(--white);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+  
+  .ai-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    outline: none;
+  }
+  
+  .ai-send-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ai-send-btn:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  }
+  
+  .ai-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .input-hint {
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .quick-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .quick-action-btn {
+    background: var(--light-gray);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .quick-action-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  /* Typing Indicator */
+  .typing-indicator {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.3s ease;
+  }
+  
+  .typing-indicator .message-avatar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+  }
+  
+  .typing-content {
+    background: var(--light-gray);
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    border-radius: 20px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .loading-dots {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .loading-dots span {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+  }
+  
+  .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+  .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+  }
+  
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Code blocks in messages */
+  .ai-code-block {
+    background: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+  }
+  
+  /* Error states */
+  .error-message {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  
+  body.dark-theme .error-message {
+    background: rgba(220, 53, 69, 0.2);
+    color: #f8d7da;
+  }
+  
+  /* Success states */
+  .success-message {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    color: #155724;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  
+  body.dark-theme .success-message {
+    background: rgba(40, 167, 69, 0.2);
+    color: #d4edda;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 2rem;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .ai-stats {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .ai-settings-panel {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      border-radius: 0;
+      z-index: 9999;
+    }
+    
+    .chat-header {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    
+    .chat-controls {
+      width: 100%;
+      justify-content: flex-end;
+    }
+    
+    .message-content {
+      max-width: 85%;
+    }
+    
+    .input-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .quick-actions {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    
+    .ai-chat-container {
+      height: 500px;
+    }
+  }
+  
+  /* Scrollbar styling */
+  .chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-track {
+    background: var(--light-gray);
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: var(--medium-gray);
+    border-radius: 3px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+  
+  /* Welcome message styling */
+  .welcome-message {
+    margin-bottom: 30px;
+  }
+  
+  .welcome-message .message-content {
+    max-width: 100%;
+  }
+  
+  /* Auto-resize textarea */
+  .ai-input {
+    overflow: hidden;
+    resize: none;
+  }
+</style>

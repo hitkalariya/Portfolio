@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hit'sFolio - Projects</title>
+  <meta name="description" content="Hit Kalariya's AI/ML Projects Portfolio - Showcasing 15+ innovative machine learning solutions, computer vision projects, and data analysis applications across various domains.">
+  <meta name="keywords" content="AI ML Projects, Machine Learning Portfolio, Computer Vision, Data Science Projects, Python Projects">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+  
+  <!-- CSS here -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fontawsome/css/all.min.css">
+  <link rel="stylesheet" href="assets/fontawsome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .project-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+    
+    .project-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+    }
+    
+    .project-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .project-title a:hover {
+      color: var(--primary);
+    }
+    
+    .project-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    .tech-tag {
+      background: #f8f9fa;
+      color: #495057;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      color: white;
+    }
+    
+    .btn-primary:hover i {
+      transform: scale(1.1);
+    }
+    
+    .btn-outline {
+      border: 2px solid #ddd;
+      color: #666;
+    }
+    
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(102, 126, 234, 0.05);
+    }
+    
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .portfolio-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    
+    .portfolio-header h1 span {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .portfolio-header p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .projects-count {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .count-badge {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .project-category {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .project-category.featured {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .portfolio-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .portfolio-header p {
+        font-size: 1rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .project-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-content">
+    <!-- header part start -->
+    <header class="header-area">
+      <nav class="navbar">
+        <div class="container">
+          <div class="menu-container">
+            <div class="logo">
+              <a class="navbar-brand me-0" href="index.html">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0 1.5C0 1.10218 0.158035 0.720644 0.43934 0.43934C0.720644 0.158035 1.10218 0 1.5 0L9 0C9.39782 0 9.77936 0.158035 10.0607 0.43934C10.342 0.720644 10.5 1.10218 10.5 1.5V22.5C10.5 22.8978 10.342 23.2794 10.0607 23.5607C9.77936 23.842 9.39782 24 9 24H1.5C1.10218 24 0.720644 23.842 0.43934 23.5607C0.158035 23.2794 0 22.8978 0 22.5V1.5ZM13.5 1.5C13.5 1.10218 13.658 0.720644 13.9393 0.43934C14.2206 0.158035 14.6022 0 15 0L22.5 0C22.8978 0 23.2794 0.158035 23.5607 0.43934C23.842 0.720644 24 1.10218 24 1.5V9C24 9.39782 23.842 9.77936 23.5607 10.0607C23.2794 10.342 22.8978 10.5 22.5 10.5H15C14.6022 10.5 14.2206 10.342 13.9393 10.0607C13.658 9.77936 13.5 9.39782 13.5 9V1.5ZM13.5 15C13.5 14.6022 13.658 14.2206 13.9393 13.9393C14.2206 13.658 14.6022 13.5 15 13.5H22.5C22.8978 13.5 23.2794 13.658 23.5607 13.9393C23.842 14.2206 24 14.6022 24 15V22.5C24 22.8978 23.842 23.2794 23.5607 23.5607C23.2794 23.842 22.8978 24 22.5 24H15C14.6022 24 14.2206 23.842 13.9393 23.5607C13.658 23.2794 13.5 22.8978 13.5 22.5V15Z"
+                    class="logo-icon" />
+                </svg>
+                <span>Hit's<span class="primary">Folio</span></span>
+              </a>
+            </div>
+            <div class="navbar-main d-flex flex-grow-1">
+              <div class="logo inner-logo d-block d-xl-none">
+                <a class="navbar-brand me-0" href="index.html">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0 1.5C0 1.10218 0.158035 0.720644 0.43934 0.43934C0.720644 0.158035 1.10218 0 1.5 0L9 0C9.39782 0 9.77936 0.158035 10.0607 0.43934C10.342 0.720644 10.5 1.10218 10.5 1.5V22.5C10.5 22.8978 10.342 23.2794 10.0607 23.5607C9.77936 23.842 9.39782 24 9 24H1.5C1.10218 24 0.720644 23.842 0.43934 23.5607C0.158035 23.2794 0 22.8978 0 22.5V1.5ZM13.5 1.5C13.5 1.10218 13.658 0.720644 13.9393 0.43934C14.2206 0.158035 14.6022 0 15 0L22.5 0C22.8978 0 23.2794 0.158035 23.5607 0.43934C23.842 0.720644 24 1.10218 24 1.5V9C24 9.39782 23.842 9.77936 23.5607 10.0607C23.2794 10.342 22.8978 10.5 22.5 10.5H15C14.6022 10.5 14.2206 10.342 13.9393 10.0607C13.658 9.77936 13.5 9.39782 13.5 9V1.5ZM13.5 15C13.5 14.6022 13.658 14.2206 13.9393 13.9393C14.2206 13.658 14.6022 13.5 15 13.5H22.5C22.8978 13.5 23.2794 13.658 23.5607 13.9393C23.842 14.2206 24 14.6022 24 15V22.5C24 22.8978 23.842 23.2794 23.5607 23.5607C23.2794 23.842 22.8978 24 22.5 24H15C14.6022 24 14.2206 23.842 13.9393 23.5607C13.658 23.2794 13.5 22.8978 13.5 22.5V15Z"
+                      class="logo-icon" />
+                  </svg>
+                  <span>Hit's<span class="primary">Folio</span></span>
+                </a>
+              </div>
+              <ul class="navbar-info mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">
+                    <svg class="nav-icon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M13.475 4.92481L9.03083 1.46814C8.64082 1.16473 8.1608 1 7.66667 1C7.17254 1 6.69251 1.16473 6.3025 1.46814L1.8575 4.92481C1.59037 5.13254 1.37424 5.39858 1.22563 5.7026C1.07701 6.00662 0.99984 6.34058 1 6.67897V12.679C1 13.121 1.17559 13.5449 1.48816 13.8575C1.80072 14.17 2.22464 14.3456 2.66667 14.3456H12.6667C13.1087 14.3456 13.5326 14.17 13.8452 13.8575C14.1577 13.5449 14.3333 13.121 14.3333 12.679V6.67897C14.3333 5.99314 14.0167 5.34564 13.475 4.92481Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10.9753 10.1665C9.13359 11.2773 6.14859 11.2773 4.30859 10.1665" stroke-width="1.4"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Home</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">
+                    <svg class="nav-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9 9.8335C9.66304 9.8335 10.2989 9.5701 10.7678 9.10126C11.2366 8.63242 11.5 7.99654 11.5 7.3335C11.5 6.67045 11.2366 6.03457 10.7678 5.56573C10.2989 5.09689 9.66304 4.8335 9 4.8335C8.33696 4.8335 7.70107 5.09689 7.23223 5.56573C6.76339 6.03457 6.5 6.67045 6.5 7.3335C6.5 7.99654 6.76339 8.63242 7.23223 9.10126C7.70107 9.5701 8.33696 9.8335 9 9.8335Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9 1.5C15 1.5 16.5 3 16.5 9C16.5 15 15 16.5 9 16.5C3 16.5 1.5 15 1.5 9C1.5 3 3 1.5 9 1.5Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M4 15.7085V15.6668C4 14.7828 4.35119 13.9349 4.97631 13.3098C5.60143 12.6847 6.44928 12.3335 7.33333 12.3335H10.6667C11.5507 12.3335 12.3986 12.6847 13.0237 13.3098C13.6488 13.9349 14 14.7828 14 15.6668V15.7085"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="portfolio.html">
+                    <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M2.00326 3.99733L7.95159 1.40649C8.04974 1.36442 8.15533 1.34243 8.26212 1.34181C8.3689 1.34119 8.47473 1.36196 8.57337 1.40289C8.67201 1.44382 8.76145 1.50408 8.83642 1.58013C8.9114 1.65617 8.97039 1.74646 9.00992 1.84566L13.1133 11.764C13.1985 11.9651 13.2014 12.1917 13.1213 12.3949C13.0412 12.5982 12.8845 12.7618 12.6849 12.8507L6.73742 15.4415C6.63922 15.4837 6.53356 15.5058 6.42668 15.5065C6.3198 15.5072 6.21387 15.4864 6.11514 15.4455C6.0164 15.4046 5.92688 15.3442 5.85184 15.2681C5.7768 15.192 5.71778 15.1016 5.67826 15.0023L1.57492 5.08316C1.48963 4.88204 1.48673 4.65546 1.56684 4.45222C1.64696 4.24898 1.80367 4.08616 2.00326 3.99733Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M11.5 1.3335H12.3333C12.5543 1.3335 12.7663 1.42129 12.9226 1.57757C13.0789 1.73385 13.1667 1.94582 13.1667 2.16683V5.0835"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M15.6663 3C15.8863 3.09333 16.0997 3.18083 16.3063 3.2625C16.5098 3.34882 16.6706 3.51241 16.7534 3.71729C16.8362 3.92217 16.8343 4.15155 16.748 4.355L14.833 8.83334"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ai-assistant.html">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 17L12 22L22 17" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 12L12 17L22 12" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    AI Assistant
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">
+                    <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.66699 5.5H12.3337" stroke-width="1.4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M5.66699 8.8335H10.667" stroke-width="1.4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M14 1.3335C14.663 1.3335 15.2989 1.59689 15.7678 2.06573C16.2366 2.53457 16.5 3.17045 16.5 3.8335V10.5002C16.5 11.1632 16.2366 11.7991 15.7678 12.2679C15.2989 12.7368 14.663 13.0002 14 13.0002H9.83333L5.66667 15.5002V13.0002H4C3.33696 13.0002 2.70107 12.7368 2.23223 12.2679C1.76339 11.7991 1.5 11.1632 1.5 10.5002V3.8335C1.5 3.17045 1.76339 2.53457 2.23223 2.06573C2.70107 1.59689 3.33696 1.3335 4 1.3335H14Z"
+                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Contact
+                  </a>
+                </li>
+              </ul>
+              <div class="header-right-info d-flex align-items-center">
+                <button class="theme-control-btn">
+                  <span class="dark">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.8005 3C10.207 3.0003 8.64356 3.44286 7.27683 4.28049C5.91011 5.11811 4.79139 6.31937 4.04002 7.75612C3.28865 9.19288 2.93281 10.8112 3.01046 12.4386C3.08811 14.0659 3.59633 15.6411 4.48091 16.9963C5.3655 18.3514 6.59326 19.4356 8.03324 20.1333C9.47322 20.8309 11.0714 21.1157 12.6573 20.9574C14.2432 20.7991 15.7573 20.2036 17.0381 19.2344C18.319 18.2652 19.3185 16.9587 19.9301 15.4542C20.2302 14.7162 19.5111 13.9746 18.7875 14.2752C17.5475 14.7888 16.1706 14.8418 14.8963 14.425C13.622 14.0082 12.5308 13.1479 11.8126 11.9937C11.0943 10.8396 10.7943 9.4645 10.9648 8.10764C11.1353 6.75077 11.7655 5.49792 12.7458 4.5669L12.8136 4.4949C13.2986 3.9279 12.913 3.0072 12.1464 3.0072H11.9122L11.8524 3.0018L11.7996 3H11.8005Z"
+                        fill="#1A1F2C" />
+                    </svg>
+                  </span>
+                  <span class="light">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 19C12.2449 19 12.4813 19.09 12.6644 19.2527C12.8474 19.4155 12.9643 19.6397 12.993 19.883L13 20V21C12.9997 21.2549 12.9021 21.5 12.7272 21.6854C12.5522 21.8707 12.313 21.9822 12.0586 21.9972C11.8042 22.0121 11.5536 21.9293 11.3582 21.7657C11.1627 21.6021 11.0371 21.3701 11.007 21.117L11 21V20C11 19.7348 11.1054 19.4804 11.2929 19.2929C11.4804 19.1054 11.7348 19 12 19Z"
+                        fill="#FD7E41" />
+                      <path
+                        d="M18.3127 16.9099L18.4067 16.9929L19.1067 17.6929C19.2861 17.8729 19.3902 18.1144 19.398 18.3683C19.4057 18.6223 19.3165 18.8697 19.1485 19.0602C18.9804 19.2508 18.7462 19.3702 18.4933 19.3943C18.2403 19.4184 17.9877 19.3454 17.7867 19.1899L17.6927 19.1069L16.9927 18.4069C16.8202 18.2347 16.7165 18.0053 16.7012 17.7619C16.6859 17.5186 16.76 17.278 16.9097 17.0855C17.0593 16.893 17.2741 16.7618 17.5137 16.7166C17.7533 16.6713 18.0012 16.7152 18.2107 16.8399L18.3127 16.9099Z"
+                        fill="#FD7E41" />
+                    </svg>
+                  </span>
+                </button>
+                <a href="contact.html" class="lets-talk-btn">
+                  Let's Talk
+                  <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 11.6665V6.6665H12.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M17.5 6.6665L10 14.1665L2.5 6.6665" stroke="white" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="mobile-menu-overlay d-block d-lg-none"></div>
+            <div class="mobile-menu-control-bar d-block d-xl-none">
+              <button class="mobile-menu-control-bar">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- header part end -->
+
+    <!-- main area part start -->
+    <main>
+      <section class="content-box-area mt-4">
+        <div class="container">
+          <!-- Portfolio Header -->
+          <div class="portfolio-header">
+            <h1>My <span>Projects</span> Portfolio</h1>
+            <p>Showcasing innovative AI/ML solutions, data analysis projects, and cutting-edge research across various domains including computer vision, healthcare AI, cybersecurity, and multimodal AI systems.</p>
+          </div>
+
+          <!-- Projects Count -->
+          <div class="projects-count">
+            <div class="count-badge">
+              <i class="fas fa-code"></i> 15+ AI/ML Projects Completed
+            </div>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="project-grid">
+            
+            <!-- Project 1: Zidio Development (Latest) -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Project_thumbnail_2.png" alt="Zidio Development" class="img-fluid">
+                <div class="project-category featured">Latest Project</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Zidio-Development" target="_blank">Zidio Development</a>
+                </h3>
+                <p class="project-description">
+                  A comprehensive Python-based development project showcasing advanced AI/ML implementations, including agentic AI systems, multimodal AI development, and cutting-edge research in artificial intelligence and machine learning applications.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">AI/ML</span>
+                  <span class="tech-tag">Agentic AI</span>
+                  <span class="tech-tag">Multimodal AI</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Zidio-Development" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                  <span class="project-status">🔥 Active Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Stellar Classification -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Project_thumbnail.png" alt="Stellar Classification" class="img-fluid">
+                <div class="project-category">Computer Vision</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Steller-classification" target="_blank">Stellar Classification</a>
+                </h3>
+                <p class="project-description">
+                  A computer vision and machine learning project for stellar classification, identifying and categorizing celestial objects such as stars, galaxies, and quasars based on their spectral features using advanced ML algorithms.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Computer Vision</span>
+                  <span class="tech-tag">Scikit-Learn</span>
+                  <span class="tech-tag">Astronomy</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Steller-classification" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Network Traffic Classification -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Classifying Networ Traffic Flow.png" alt="Network Traffic Classification" class="img-fluid">
+                <div class="project-category">Cybersecurity</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Classifying-Network-Traffic-Flow" target="_blank">Network Traffic Flow Classification</a>
+                </h3>
+                <p class="project-description">
+                  A machine learning model to classify network traffic as benign or indicative of DDoS attacks, enhancing real-time threat detection. Leverages traffic patterns and features for accurate cybersecurity solutions.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Machine Learning</span>
+                  <span class="tech-tag">Cybersecurity</span>
+                  <span class="tech-tag">DDoS Detection</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Classifying-Network-Traffic-Flow" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: Customer Feedback Satisfaction -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/customer_feedback_satisfaction.png" alt="Customer Feedback Satisfaction" class="img-fluid">
+                <div class="project-category">NLP</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/customer_feedback_satisfaction" target="_blank">Customer Feedback Satisfaction</a>
+                </h3>
+                <p class="project-description">
+                  A machine learning model to analyze customer feedback and predict satisfaction levels, helping businesses enhance service quality. Provides actionable insights to improve customer experience and retention strategies.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">NLP</span>
+                  <span class="tech-tag">Sentiment Analysis</span>
+                  <span class="tech-tag">Customer Analytics</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/customer_feedback_satisfaction" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: Optimal Pricing for Retail -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Determining-Optimal-Pricing-for-Retail-Products.png" alt="Retail Pricing Optimization" class="img-fluid">
+                <div class="project-category">Data Science</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Determining-Optimal-Pricing-for-Retail-Products" target="_blank">Optimal Pricing for Retail Products</a>
+                </h3>
+                <p class="project-description">
+                  A machine learning solution to determine optimal pricing for retail products by analyzing sales data, market trends, and customer behavior. Maximizes revenue while maintaining competitive pricing strategies.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Data Science</span>
+                  <span class="tech-tag">Pricing Strategy</span>
+                  <span class="tech-tag">Business Analytics</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Determining-Optimal-Pricing-for-Retail-Products" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 6: Fuel Efficiency Prediction -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Fuel-Efficiency-Prediction-and-Analysis-for-Automotive-Insights.png" alt="Fuel Efficiency Prediction" class="img-fluid">
+                <div class="project-category">Automotive AI</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Fuel-Efficiency-Prediction-and-Analysis-for-Automotive-Insights" target="_blank">Fuel Efficiency Prediction & Analysis</a>
+                </h3>
+                <p class="project-description">
+                  A machine learning model to predict vehicle fuel efficiency and analyze key factors affecting performance. Provides actionable insights for automotive optimization and environmental sustainability.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Regression</span>
+                  <span class="tech-tag">Automotive</span>
+                  <span class="tech-tag">Sustainability</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Fuel-Efficiency-Prediction-and-Analysis-for-Automotive-Insights" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 7: Indian Food Recipe Generator -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Indian-food-recipe-generator.png" alt="Indian Food Recipe Generator" class="img-fluid">
+                <div class="project-category">NLP</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Indian-food-recipe-generator" target="_blank">Indian Food Recipe Generator</a>
+                </h3>
+                <p class="project-description">
+                  An Indian food recipe generator using natural language processing and machine learning to suggest personalized recipes. Tailors recipes based on user preferences, ingredients, and dietary requirements.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">NLP</span>
+                  <span class="tech-tag">Text Generation</span>
+                  <span class="tech-tag">Food Tech</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Indian-food-recipe-generator" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 8: K-Means Bank Transaction Clustering -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/K-Means-Clustering-Bank-Transaction.png" alt="Bank Transaction Clustering" class="img-fluid">
+                <div class="project-category">FinTech</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/K-Means-Clustering-Bank-Transaction" target="_blank">K-Means Bank Transaction Clustering</a>
+                </h3>
+                <p class="project-description">
+                  A K-Means clustering model to analyze bank transaction data, segmenting customers based on spending patterns. Helps in targeted marketing and improving financial service offerings.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">K-Means</span>
+                  <span class="tech-tag">Customer Segmentation</span>
+                  <span class="tech-tag">FinTech</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/K-Means-Clustering-Bank-Transaction" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 9: Telecom Customer Churn Prediction -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Telecom-Customer-Churn-Prediction-Supervised-Learning.png" alt="Telecom Churn Prediction" class="img-fluid">
+                <div class="project-category">Telecom</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Telecom-Customer-Churn-Prediction-Supervised-Learning" target="_blank">Telecom Customer Churn Prediction</a>
+                </h3>
+                <p class="project-description">
+                  A supervised learning model to predict telecom customer churn by analyzing usage patterns and customer behavior. Helps telecom providers enhance retention strategies and reduce churn rates.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Classification</span>
+                  <span class="tech-tag">Churn Analysis</span>
+                  <span class="tech-tag">Telecom</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Telecom-Customer-Churn-Prediction-Supervised-Learning" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 10: Twitter Sentiment Analysis -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/twitter_sentiment_Analysis.png" alt="Twitter Sentiment Analysis" class="img-fluid">
+                <div class="project-category">Social Media AI</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/twitter_sentiment_Analysis" target="_blank">Twitter Sentiment Analysis</a>
+                </h3>
+                <p class="project-description">
+                  A machine learning model for Twitter sentiment analysis to classify tweets as positive, negative, or neutral. Aids in understanding public opinion and improving decision-making for businesses and campaigns.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">NLP</span>
+                  <span class="tech-tag">Sentiment Analysis</span>
+                  <span class="tech-tag">Social Media</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/twitter_sentiment_Analysis" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 11: Unsupervised Customer Segmentation -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/img/project-image/Unsuperviced_Learning_customer_segmentation.png" alt="Customer Segmentation" class="img-fluid">
+                <div class="project-category">Marketing AI</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Unsuperviced_Learning_customer_segmentation" target="_blank">Unsupervised Customer Segmentation</a>
+                </h3>
+                <p class="project-description">
+                  An unsupervised learning model to segment customers based on purchasing behavior and demographics. Enables businesses to tailor marketing strategies and improve customer engagement.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Clustering</span>
+                  <span class="tech-tag">Customer Analytics</span>
+                  <span class="tech-tag">Marketing</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Unsuperviced_Learning_customer_segmentation" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 12: AI Image Generator -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/400x250/667eea/white?text=AI+Image+Generator" alt="AI Image Generator" class="img-fluid">
+                <div class="project-category">Generative AI</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/AI-Image-Generator" target="_blank">AI Image Generator</a>
+                </h3>
+                <p class="project-description">
+                  A generative AI project for creating images using advanced deep learning models. Implements state-of-the-art techniques for high-quality image synthesis and manipulation.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">GANs</span>
+                  <span class="tech-tag">Deep Learning</span>
+                  <span class="tech-tag">Computer Vision</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/AI-Image-Generator" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 13: Medical AI Research -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/400x250/764ba2/white?text=Medical+AI+Research" alt="Medical AI Research" class="img-fluid">
+                <div class="project-category">Healthcare AI</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Medical-AI-Research" target="_blank">Medical AI Research</a>
+                </h3>
+                <p class="project-description">
+                  Advanced AI research in healthcare applications, focusing on medical image analysis, diagnostic assistance, and predictive modeling for improved patient outcomes and healthcare efficiency.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Medical Imaging</span>
+                  <span class="tech-tag">Deep Learning</span>
+                  <span class="tech-tag">Healthcare</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Medical-AI-Research" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 14: Computer Vision Projects -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/400x250/36D1DC/white?text=Computer+Vision" alt="Computer Vision Projects" class="img-fluid">
+                <div class="project-category">Computer Vision</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Computer-Vision-Projects" target="_blank">Computer Vision Projects</a>
+                </h3>
+                <p class="project-description">
+                  A collection of computer vision projects including object detection, image classification, face recognition, and advanced image processing techniques using modern deep learning frameworks.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">PyTorch</span>
+                  <span class="tech-tag">TensorFlow</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Computer-Vision-Projects" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 15: Multimodal AI Systems -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/400x250/5B73E8/white?text=Multimodal+AI" alt="Multimodal AI Systems" class="img-fluid">
+                <div class="project-category">Multimodal AI</div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/hitkalariya/Multimodal-AI-Systems" target="_blank">Multimodal AI Systems</a>
+                </h3>
+                <p class="project-description">
+                  Advanced multimodal AI implementations combining vision, language, and audio processing. Features cutting-edge research in Vision-Language Models (VLM) and cross-modal understanding.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">VLM</span>
+                  <span class="tech-tag">Transformers</span>
+                  <span class="tech-tag">Multimodal</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hitkalariya/Multimodal-AI-Systems" target="_blank" class="project-btn btn-primary">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Let's Work Together Section -->
+          <div class="portfolio-cta-section mt-5">
+            <div class="card">
+              <div class="card-body text-center">
+                <h2>Impressed by My Work?</h2>
+                <p>Let's discuss how I can help bring your AI/ML vision to life</p>
+                <div class="cta-buttons">
+                  <a href="contact.html" class="btn btn-primary-cta">
+                    <i class="fas fa-rocket"></i> Start a Project
+                  </a>
+                  <a href="https://drive.google.com/file/d/1EW3MXkjnkvXxpp095uwUwICalkA9gkO2/view?usp=drive_link" target="_blank" class="btn btn-secondary-cta">
+                    <i class="fas fa-download"></i> Download Resume
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- background shape area start -->
+      <div class="background-shapes">
+        <div class="shape-1 common-shape">
+          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+        </div>
+        <div class="shape-2 common-shape">
+          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+        </div>
+        <div class="threed-shape-1 move-with-cursor" data-value="1">
+          <img src="assets/img/bg/object-3d-1.png" alt="object-3d-1">
+        </div>
+        <div class="threed-shape-2 move-with-cursor" data-value="1">
+          <img src="assets/img/bg/object-3d-2.png" alt="object-3d-2">
+        </div>
+      </div>
+      <!-- background shape area end -->
+    </main>
+    <!-- main area part end -->
+
+    <!-- footer part start -->
+    <footer class="footer-area">
+      <div class="container">
+        <div class="text text-center">
+          <p>@ Hit'sFolio 2024, Design By <a href="#">hitkalariya</a></p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer part end -->
+  </div>
+
+  <!-- JS here -->
+  <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/ajax-form.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+    
+    // Add project filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Filter projects
+        projectCards.forEach(card => {
+          const category = card.querySelector('.project-category').textContent.toLowerCase();
+          if (filter === 'all' || category.includes(filter)) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 100);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+    
+    // Enhanced hover effects
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+  
+  <style>
+    .project-status {
+      font-size: 0.8rem;
+      color: #28a745;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .portfolio-cta-section {
+      margin: 60px 0;
+    }
+    
+    .portfolio-cta-section .card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border: none;
+      border-radius: 20px;
+      padding: 20px;
+    }
+    
+    .portfolio-cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+    
+    .portfolio-cta-section p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary-cta {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      color: white;
+    }
+    
+    .btn-secondary-cta {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary-cta:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-primary-cta,
+      .btn-secondary-cta {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+  </style>
+</body>
+
+</html>
