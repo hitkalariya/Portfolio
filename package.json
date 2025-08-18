@@ -1,17 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
-=======
-  "name": "hits-modern-portfolio",
-  "version": "1.0.0",
->>>>>>> f1a0dfeae09d69ea294646326293bc88f3a23469
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-<<<<<<< HEAD
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -92,16 +86,3 @@
     "vite": "^7.1.2"
   }
 }
-=======
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "animejs": "^3.2.1",
-    "lucide-react": "^0.263.1",
-    "three": "^0.155.0"
-  },
-  "devDependencies": {
-    "vite": "^4.4.5"
-  }
-}
->>>>>>> f1a0dfeae09d69ea294646326293bc88f3a23469

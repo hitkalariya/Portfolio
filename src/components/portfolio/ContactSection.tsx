@@ -23,7 +23,7 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'Hit Kalariya',
+    value: 'Eid Kalaria',
     href: 'https://linkedin.com/in/eidkalaria'
   },
   {
