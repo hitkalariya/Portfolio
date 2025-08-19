@@ -1,0 +1,162 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+  // For production: provider = "postgresql"
+}
+
+// User model for authentication
+model User {
+  id            String    @id @default(cuid())
+  name          String?   // Display name
+  email         String    @unique // Login email
+  emailVerified DateTime? // Email verification timestamp
+  image         String?   // Profile image URL
+  role          String    @default("USER") // USER, ADMIN roles
+  password      String?   // Hashed password for credentials auth
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts Account[] // OAuth accounts
+  sessions Session[] // User sessions
+  profile  Profile?  // User profile (1:1)
+
+  @@map("users")
+}
+
+// OAuth Account model (NextAuth)
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  // Foreign key to User
+  type              String  // oauth, email, credentials
+  provider          String  // github, google, etc.
+  providerAccountId String  // Provider's user ID
+  refresh_token     String? @db.Text // OAuth refresh token
+  access_token      String? @db.Text // OAuth access token
+  expires_at        Int?    // Token expiration
+  token_type        String? // Bearer, etc.
+  scope             String? // OAuth scopes
+  id_token          String? @db.Text // OpenID Connect ID token
+  session_state     String? // OAuth session state
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+// Session model (NextAuth)
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique // Session token
+  userId       String   // Foreign key to User
+  expires      DateTime // Session expiration
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// Verification token model (NextAuth)
+model VerificationToken {
+  identifier String   // Email or other identifier
+  token      String   @unique // Verification token
+  expires    DateTime // Token expiration
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+// Profile model (portfolio data)
+model Profile {
+  id          String   @id @default(cuid())
+  userId      String   @unique // Foreign key to User
+  firstName   String   // First name
+  lastName    String   // Last name
+  title       String   // Professional title
+  bio         String   @db.Text // Biography/description
+  location    String?  // Current location
+  website     String?  // Personal website URL
+  githubUrl   String?  // GitHub profile URL
+  linkedinUrl String?  // LinkedIn profile URL
+  twitterUrl  String?  // Twitter profile URL
+  resumeUrl   String?  // Resume/CV URL
+  avatar      String?  // Profile image URL
+  skills      String   @db.Text // JSON array of skills
+  experience  String   @db.Text // JSON array of experience
+  education   String   @db.Text // JSON array of education
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+// Project model
+model Project {
+  id          String   @id @default(cuid())
+  title       String   // Project title
+  slug        String   @unique // URL slug
+  description String   @db.Text // Short description
+  content     String   @db.Text // Full project description (Markdown)
+  image       String?  // Featured image URL
+  gallery     String?  @db.Text // JSON array of gallery images
+  technologies String  @db.Text // JSON array of technologies used
+  githubUrl   String?  // GitHub repository URL
+  liveUrl     String?  // Live demo URL
+  category    String   // Project category
+  featured    Boolean  @default(false) // Featured on homepage
+  status      String   @default("PUBLISHED") // DRAFT, PUBLISHED, ARCHIVED
+  startDate   DateTime? // Project start date
+  endDate     DateTime? // Project end date
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("projects")
+}
+
+// Media model (for file uploads)
+model Media {
+  id        String   @id @default(cuid())
+  filename  String   // Original filename
+  url       String   // File URL (Cloudinary, etc.)
+  publicId  String?  // Provider-specific ID
+  mimeType  String   // File MIME type
+  size      Int      // File size in bytes
+  width     Int?     // Image width (if applicable)
+  height    Int?     // Image height (if applicable)
+  alt       String?  // Alt text for accessibility
+  folder    String?  // Organization folder
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("media")
+}
+
+// Blog post model (optional, controlled by ENABLE_BLOG)
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String   // Post title
+  slug        String   @unique // URL slug
+  excerpt     String?  @db.Text // Short excerpt
+  content     String   @db.Text // Full content (Markdown)
+  image       String?  // Featured image URL
+  tags        String?  @db.Text // JSON array of tags
+  status      String   @default("DRAFT") // DRAFT, PUBLISHED
+  published   Boolean  @default(false) // Published status
+  publishedAt DateTime? // Publication date
+  readTime    Int?     // Estimated read time in minutes
+  views       Int      @default(0) // View count
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("blog_posts")
+}
