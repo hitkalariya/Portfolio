@@ -1,12 +1,14 @@
-# React + Vite
+# Portfolio Responsive Complete
+## [Watch it on youtube](https://youtu.be/AKNvTxWOdKw)
+### Portfolio Responsive Complete
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Responsive Personal Portfolio Website HTML CSS & JavaScript.
+- Contains animations when scrolling.
+- Smooth scrolling in each section.
+- Developed first with the Mobile First methodology, then for desktop.
+- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-Currently, two official plugins are available:
+💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![preview img](/preview.png)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
